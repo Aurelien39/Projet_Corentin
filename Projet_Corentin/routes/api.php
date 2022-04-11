@@ -21,3 +21,5 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::get('/', function() {
     return json_encode("Ok git thube desktop");
 });
+
+Route::get('/all-clients', [ApiController::class, 'getAllClients'])->name('all-clients');

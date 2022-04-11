@@ -15,12 +15,13 @@ return new class extends Migration
     {
         Schema::create('clients', function (Blueprint $table) {
             $table->id();
-            $table->string('nom');
-            $table->string('prenom');
-            $table->string('num_tel');
-            $table->string('email');
-            $table->string('adresse');
-            $table->string('codepostal');
+            $table->string("nom");
+            $table->string("prenom");
+            $table->string("tel");
+            $table->string("email");
+            $table->string("adresse");
+            $table->string("code_postal");
+            $table->foreignId("user_id")->constrained();
             $table->timestamps();
         });
     }

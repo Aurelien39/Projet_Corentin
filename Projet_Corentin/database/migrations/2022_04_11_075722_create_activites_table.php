@@ -15,11 +15,11 @@ return new class extends Migration
     {
         Schema::create('activites', function (Blueprint $table) {
             $table->id();
-            $table->string('nom');
-            $table->date('date');
-            $table->text('description');
-            $table->unsignedBigInteger('id_client');
-            $table->foreign('id_client')->references('id')->on('clients');
+            $table->string("nom");
+            $table->date("date");
+            $table->time("heure");
+            $table->text("description");
+            $table->foreignId("client_id")->constrained();
             $table->timestamps();
         });
     }
